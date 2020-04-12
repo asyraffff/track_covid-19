@@ -12,14 +12,34 @@ body {
     position: relative;
 }
 
-#title {
+.title {
     position: absolute;
     z-index: 100;
-    font-size: 35px;
+    font-size: 50px;
+    font-weight: bold;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    top: 30px;
-    left: 30px;
+    top: 45px;
+    left: 50px;
+    text-transform: uppercase;
     color:white;
+    background-color: rgba(0, 0, 0, 0.3);
+    padding: 10px;
+    border-radius: 20px;
+    border: 1px solid white;
+    transition: all 0.5s ease-in-out;
+}
+
+.title:hover {
+    padding: 10px;
+    font-size: 60px;
+    transform: translateY(-5px);
+    transition: all 0.5s ease-in-out;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+}
+
+#virus {
+    color: rgb(209, 56, 0);
 }
 
 .search {
@@ -27,18 +47,24 @@ body {
     z-index: 100;
     top: 150px;
     left: 50px;
+    display: flex;;
 }
 
 #searchBar {
     background: #444449;
     border-radius: 25px;
     color: white;
-    width: 220px;
+    width: 280px;
     height: 45px;
     padding-left: 20px;
     font-size: 15px;
     border: none;
     font-family: monospace;
+    outline: none;
+    display: flex;
+}
+
+#searchBar:focus, .search:focus{
     outline: none;
 }
 
@@ -50,12 +76,38 @@ body {
     border-radius: 30px;
     width: 240px;
     height: 450px;
+    padding-left: 10px;
+    padding-right: 5px;
     background-color: white;
 }
 
-.storeList {
-    padding-left: 15px;
-    padding-right: 15px;
+.storeCasesList, .storeCriticalList, .storeDeathsList, .storeRecoveredList{
+    
+    transition: all 0.5s ease-in-out;
+}
+
+.storeCasesList:hover,
+.storeCriticalList:hover,
+.storeDeathsList:hover,
+.storeRecoveredList:hover {
+    transition: all 0.5s ease-in-out;
+    background-color: #c2c1c1;
+    border-radius: 20px;
+    padding: 10px;
+    margin: 0.5rem;
+}
+
+.data{
+    transition: all 0.5s ease-in-out;
+}
+
+.data:hover{
+    transition: all 0.5s ease-in-out;
+    background-color: #c2c1c1;
+    border-radius: 20px;
+    padding: 5px;
+    margin: 0.3rem;
+
 }
 
 .storeDetails {
@@ -63,7 +115,7 @@ body {
     border-bottom: 1px solid #777777;
 }
 
-.storeList h4 {
+.storeCriticalList h4, .dataCritical h4 {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     font-size: 25px;
     padding-top: 20px;
@@ -71,12 +123,82 @@ body {
     color: rgb(35, 35, 35)
 }
 
-.storeList h5 {
+.storeCasesList h4 , .dataCases h4{
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 25px;
+    padding-top: 20px;
+    margin: 0;
+    color: rgb(35, 35, 35)
+}
+
+.storeDeathsList h4 , .dataDeaths h4{
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 25px;
+    padding-top: 20px;
+    margin: 0;
+    color: rgb(35, 35, 35)
+}
+
+.storeRecoveredList h4 , .dataRecovered h4{
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 25px;
+    padding-top: 20px;
+    margin: 0;
+    color: rgb(35, 35, 35)
+}
+
+.storeCasesList h5, .dataCases h5, .infoCases h3 {
     margin-top: 10px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    color: rgb(35, 35, 35);
+    color: rgb(0, 47, 255);
     font-size: 20px;
     margin-bottom: 15px;
+}
+
+.storeDeathsList h5 , .dataDeaths h5, .infoDeaths h3{
+    margin-top: 10px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: red;
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+.storeRecoveredList h5, .dataRecovered h5, .infoRecovered h3 {
+    margin-top: 10px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: green;
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+.storeCriticalList h5 , .dataCritical h5, .infoCritical h3{
+    margin-top: 10px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color:rgb(205, 195, 50);
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+.infoTodayCases h3{
+     margin-top: 10px;
+     font-family: 'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;
+     color:rgb(205, 50, 187);
+     font-size: 20px;
+     margin-bottom: 15px
+
+}
+
+.infoActive h3 {
+    margin-top: 10px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: rgb(50, 187, 205);
+    font-size: 20px;
+    margin-bottom: 15px
+}
+
+.infoContainer{
+    width: 180px;
+    height: 540px;
 }
 
 .fixed {
@@ -126,8 +248,8 @@ body {
 .dataContainer {
     position: absolute;
     z-index: 100;
-    top: 220px;
-    left: 300px;
+    top: 250px;
+    left: 320px;
     border-radius: 30px;
     width: 300px;
 
@@ -138,27 +260,9 @@ body {
 
 }
 
-
-.data h4 {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    font-size: 25px;
-    padding-top: 20px;
-    margin: 0;
-    color: rgb(35, 35, 35)
-}
-
-.data h5 {
-    margin-top: 10px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    color: rgb(35, 35, 35);
-    font-size: 20px;
-    margin-bottom: 15px;
-}
-
-
 .dataListContainer {
     margin-left: 10px;
-    margin-right: 10px;
+    margin-right: 5px;
     border-bottom: 1px solid #777777;
     display: flex;
 
@@ -176,7 +280,6 @@ body {
 .data {
     flex-basis: 90%;
 }
-
 .dataNumber {
     display: flex;
     flex-basis: 10%;
@@ -191,6 +294,7 @@ body {
     color: whitesmoke;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: 12px;
+    margin-left: auto;
 }
 
 .closeButtonContainer {
@@ -198,8 +302,8 @@ body {
     width: 100px;
     z-index: 100;
     position: fixed;
-    top: 215px;
-    left: 570px;
+    top: 250px;
+    left: 580px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -230,7 +334,7 @@ body {
 .socialMediaContainer {
     position: fixed;
     bottom: 5px;
-    right: 150px;
+    right: 170px;
     width: 150px;
 }
 
