@@ -11,8 +11,9 @@
 
 <body>
     <div id="map"></div>
-    <div id="title">
-        <h2>COVID-19 TRACKER</h2>
+    <div class="title">
+        <i id="virus" class="fas fa-virus"></i>
+        COVID-19 TRACKER
     </div>
     <div class="search">
         <div class="searchContainer">
@@ -22,22 +23,22 @@
             </div>
         </div>
     </div>
-
+    
     <div class="storeContainer">
-        <div class="storeList">
+        <div class="storeCasesList">
             <div class="storeDetails">
                 <div id="totalCases">
                 </div>
                 <div class="fixed">
                     <div class="storeNumber">
-                        <button id="cases" class="button" s>
+                        <button id="cases" class="button">
                             <i class="fas fa-chevron-right"></i>
                         </button>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="storeList">
+        <div class="storeDeathsList">
             <div class="storeDetails">
                 <div id="totalDeaths">
                 </div>
@@ -50,7 +51,7 @@
                 </div>
             </div>
         </div>
-        <div class="storeList">
+        <div class="storeRecoveredList">
             <div class="storeDetails">
                 <div id="totalRecovered">
                 </div>
@@ -63,7 +64,7 @@
                 </div>
             </div>
         </div>
-        <div class="storeList">
+        <div class="storeCriticalList">
             <div class="storeDetails">
                 <div id="totalCritical">
                 </div>
@@ -83,15 +84,6 @@
     </div>
     <div class="closeButtonContainer">
         <button class="closeButton"><i class="fas fa-times"></i></button>
-    </div>
-
-    <div class="viewsContainer">
-        <div class="views">
-            <div id="cases-button">Cases</div>
-            <div id="deaths-button">Deaths</div>
-            <div id="recovered-button">Recovered</div>
-            <div id="critical-button">Critical</div>
-        </div>
     </div>
 
     <div class="socialMediaContainer">
@@ -117,7 +109,7 @@
 
 
     <script src="js/index.js"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAUkLBJw4zdpazu7WsjyzQuV0JiQbwA5u0&callback=initMap"
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBM1FmiRVKNl9PwKatEghozPpqbIT_zBcA&callback=initMap"
         async defer></script>
 </body>
 
