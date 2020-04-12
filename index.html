@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/e141ad8aed.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style/style.css">
+    <title>COVID-19 Realtime Tracker</title>
+</head>
+
+<body>
+    <div id="map"></div>
+    <div id="title">
+        <h2>COVID-19 TRACKER</h2>
+    </div>
+    <div class="search">
+        <div class="searchContainer">
+            <input type="text" id="searchBar" placeholder="Enter Country" required>
+            <div class="searchButton">
+                <i id="searchCountryButton" class="fas fa-search" onclick="searchCountry()"></i>
+            </div>
+        </div>
+    </div>
+
+    <div class="storeContainer">
+        <div class="storeList">
+            <div class="storeDetails">
+                <div id="totalCases">
+                </div>
+                <div class="fixed">
+                    <div class="storeNumber">
+                        <button id="cases" class="button" s>
+                            <i class="fas fa-chevron-right"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="storeList">
+            <div class="storeDetails">
+                <div id="totalDeaths">
+                </div>
+                <div class="fixed">
+                    <div class="storeNumber">
+                        <button id="deaths" class="button">
+                            <i class="fas fa-chevron-right"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="storeList">
+            <div class="storeDetails">
+                <div id="totalRecovered">
+                </div>
+                <div class="fixed">
+                    <div class="storeNumber">
+                        <button id="recovered" class="button">
+                            <i class="fas fa-chevron-right"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="storeList">
+            <div class="storeDetails">
+                <div id="totalCritical">
+                </div>
+                <div class="fixed">
+                    <div class="storeNumber">
+                        <button id="critical" class="button">
+                            <i class="fas fa-chevron-right"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="dataContainer">
+
+    </div>
+    <div class="closeButtonContainer">
+        <button class="closeButton"><i class="fas fa-times"></i></button>
+    </div>
+
+    <div class="viewsContainer">
+        <div class="views">
+            <div id="cases-button">Cases</div>
+            <div id="deaths-button">Deaths</div>
+            <div id="recovered-button">Recovered</div>
+            <div id="critical-button">Critical</div>
+        </div>
+    </div>
+
+    <div class="socialMediaContainer">
+        <div class="socialMediaInnerContainer">
+            <div class="facebook">
+                <a id="fb" href="https://www.facebook.com/zack.amirulz" target="_blank">
+                    <i class="fab fa-facebook-square"></i>
+                </a>
+            </div>
+            <div class="twitter">
+                <a id="ig" href="https://twitter.com/amirulasyraf4_2" target="_blank">
+                    <i class="fab fa-twitter"></i>
+                </a>
+            </div>
+            <div class="github">
+                <a id="git" href="https://github.com/asyraf-labs" target="_blank">
+                    <i class="fab fa-github"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+
+
+
+    <script src="js/index.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAUkLBJw4zdpazu7WsjyzQuV0JiQbwA5u0&callback=initMap"
+        async defer></script>
+</body>
+
+</html>
