@@ -1,1 +1,259 @@
+html {
+    scroll-behavior: smooth;
+}
+body {
+    height: 100vh;
+    margin: 0;
+}
 
+#map {
+    height: 100%;
+    width: 100%;
+    position: relative;
+}
+
+#title {
+    position: absolute;
+    z-index: 100;
+    font-size: 35px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    top: 30px;
+    left: 30px;
+    color:white;
+}
+
+.search {
+    position: absolute;
+    z-index: 100;
+    top: 150px;
+    left: 50px;
+}
+
+#searchBar {
+    background: #444449;
+    border-radius: 25px;
+    color: white;
+    width: 220px;
+    height: 45px;
+    padding-left: 20px;
+    font-size: 15px;
+    border: none;
+    font-family: monospace;
+    outline: none;
+}
+
+.storeContainer {
+    position: absolute;
+    z-index: 100;
+    top: 220px;
+    left: 50px;
+    border-radius: 30px;
+    width: 240px;
+    height: 450px;
+    background-color: white;
+}
+
+.storeList {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.storeDetails {
+    display: flex;
+    border-bottom: 1px solid #777777;
+}
+
+.storeList h4 {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 25px;
+    padding-top: 20px;
+    margin: 0;
+    color: rgb(35, 35, 35)
+}
+
+.storeList h5 {
+    margin-top: 10px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: rgb(35, 35, 35);
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+.fixed {
+    position: absolute;
+    right: 150px;
+}
+
+.storeNumber {
+    position: relative;
+    top: 40px;
+    left: 123px;
+    height: 20px;
+    width: 20px;
+    text-align: center;
+    color: white;
+    font-size: 25px;
+}
+
+
+
+.button {
+    width: 30px;
+    padding: 8px;
+    border-radius: 50%;
+    border: none;
+    height: 30px;
+    outline: none;
+    background-color: #444444;
+    color: whitesmoke;
+    cursor: pointer;
+}
+
+.button:hover {
+    color: black;
+    background-color: #777779;
+    transition: 0.2s ease-in-out;
+}
+
+
+.searchContainer i {
+    position: absolute;
+    right: 20px;
+    top: 15px;
+    color: white;
+}
+
+.dataContainer {
+    position: absolute;
+    z-index: 100;
+    top: 220px;
+    left: 300px;
+    border-radius: 30px;
+    width: 300px;
+
+    height: 450px;
+    background-color: white;
+    overflow-y: hidden;
+    display: none;
+
+}
+
+
+.data h4 {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 25px;
+    padding-top: 20px;
+    margin: 0;
+    color: rgb(35, 35, 35)
+}
+
+.data h5 {
+    margin-top: 10px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: rgb(35, 35, 35);
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+
+.dataListContainer {
+    margin-left: 10px;
+    margin-right: 10px;
+    border-bottom: 1px solid #777777;
+    display: flex;
+
+}
+
+.wrap {
+    height: 425px;
+    overflow: scroll;
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.data {
+    flex-basis: 90%;
+}
+
+.dataNumber {
+    display: flex;
+    flex-basis: 10%;
+    background-color: #444444;
+    justify-content: center;
+    align-items: center;
+    height: 25px;
+    width: 25px;
+    position: relative;
+    top: 40px;
+    border-radius: 50%;
+    color: whitesmoke;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 12px;
+}
+
+.closeButtonContainer {
+    height: 100px;
+    width: 100px;
+    z-index: 100;
+    position: fixed;
+    top: 215px;
+    left: 570px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    display: none;
+}
+
+.closeButton {
+    width: 40px;
+    padding: 8px;
+    border-radius: 50%;
+    border: none;
+    height: 40px;
+    outline: none;
+    background-color: #444444;
+    color: whitesmoke;
+    font-size: 18px;
+}
+
+.closeButton:hover {
+    color: black;
+    background-color: #777779;
+    transition: 0.8ms;
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+}
+
+
+.socialMediaContainer {
+    position: fixed;
+    bottom: 5px;
+    right: 150px;
+    width: 150px;
+}
+
+.socialMediaInnerContainer {
+    display: flex;
+    font-size: 30px;
+
+}
+
+
+.facebook,
+.twitter,
+.github {
+    margin: 10px;
+}
+
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+a:hover {
+    color: #777779;
+    transition: 0.2s ease-in-out
+}
