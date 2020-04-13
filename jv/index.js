@@ -65,8 +65,11 @@ function initMap() {
           });
 
           var infoWindow = new google.maps.InfoWindow({
-            content: ` <div class="infoContainer">
-                         <b><h1>${i.country}</h1></b><hr>
+              content: `<div id=${i['countryInfo']['_id']} class="data-wrap" onclick="clickStore('${i['countryInfo']['iso2']}')">
+                        <div class="infoContainer">
+                         <b><h1>${i.country}</h1>
+                         <img src="${i['countryInfo']['flag']}" width="35px" height="25px"/> 
+                         </b><hr>
                             <div class="infoCases">
                               <h2>Cases:</h2>
                               <h3>${i.cases}</h3>
@@ -91,7 +94,8 @@ function initMap() {
                               <h2>Active:</h2>
                               <h3>${i.active}</h3>
                             </div>
-                       </div> 
+                       </div>
+                    </div> 
                     `
           });
           marker.addListener('click', function () {
@@ -104,13 +108,13 @@ function initMap() {
           });
 
         })
-        var cases = `<h4>Cases</h4>
+          var cases = `<h4>Cases      <i class="fas fa-globe"></i></h4>
                         <h5>${totalCases}</h5>`;
-        var deaths = `<h4>Deaths</h4>
+          var deaths = `<h4>Deaths    <i class="fas fa-skull-crossbones"></i></h4>
                         <h5>${totalDeaths}</h5>`;
-        var recovered = `<h4>Recovered</h4>
+          var recovered = `<h4>Recovered     <i class="fas fa-first-aid"></i></h4>
                             <h5>${totalRecoveries}</h5>`
-        var critical = `<h4>Critical</h4>
+          var critical = `<h4>Critical     <i class="fas fa-procedures"></i></h4>
                             <h5>${totalCritical}</h5>`
         document.getElementById('totalCases').innerHTML = cases;
         document.getElementById('totalDeaths').innerHTML = deaths;
@@ -130,53 +134,58 @@ function initMap() {
       x.style.display = "none";
       button.style.display = "none";
     })
-    document.getElementById('cases').addEventListener('click', function () {
+  
+     document.getElementById('cases').addEventListener('click', function () {
       x.style.display = "block";
       button.style.display = "block";
-
-      inputData.sort((a, b) => b.cases - a.cases).forEach((i, index) => {
+      inputData.sort((a, b) => b.cases - a.cases).forEach((one, index) => {
         sortedCasesOutput +=
-          `
+         ` <div id=${one['countryInfo']['_id']} class="data-wrap" onclick="clickStore('${one['countryInfo']['iso2']}')">
                 <div class="data-wrap">
                     <div class="dataListContainer">
                         <div class="data"> 
                            <div class="dataCases">
-                               <h4>${i.country}</h4>
-                               <h5>Cases: ${i.cases}</h5>
+                               <h4>${one['country']}</h4>
+                               <h5>Cases: ${one['cases']}</h5>
                            </div>
                         </div>
                         <div class="dataNumber">
-                            ${index+1}  
+                            <img src="${one['countryInfo']['flag']}" width="30px" height="20px"/>  
                         </div>
                     </div>
                 </div>
+          </div>
                 
-                `
+         `
       })
+    
+
       sortedCasesOutput += "</div>"
 
       x.innerHTML = sortedCasesOutput;
     })
 
+
     document.getElementById('deaths').addEventListener('click', function () {
       x.style.display = "block";
       button.style.display = "block";
-      inputData.sort((a, b) => b.deaths - a.deaths).forEach((i, index) => {
+      inputData.sort((a, b) => b.deaths - a.deaths).forEach((two, index) => {
         sortedDeathsOutput +=
-          `
+            ` <div id=${two['countryInfo']['_id']} class="data-wrap" onclick="clickStore('${two['countryInfo']['iso2']}')">
                 <div class="data-wrap">
                     <div class="dataListContainer">
                         <div class="data"> 
                            <div class="dataDeaths">
-                               <h4>${i.country}</h4>
-                               <h5>Deaths: ${i.deaths}</h5>
+                               <h4>${two['country']}</h4>
+                               <h5>Deaths: ${two['deaths']}</h5>
                            </div>
                         </div>
                         <div class="dataNumber">    
-                            ${index+1}
+                            <img src="${two['countryInfo']['flag']}" width="30px" height="20px"/> 
                         </div> 
                     </div>
                 </div>
+              </div>
                 
                 `
       })
@@ -189,22 +198,23 @@ function initMap() {
     document.getElementById('recovered').addEventListener('click', function () {
       x.style.display = "block";
       button.style.display = "block";
-      inputData.sort((a, b) => b.recovered - a.recovered).forEach((i, index) => {
+      inputData.sort((a, b) => b.recovered - a.recovered).forEach((three, index) => {
         sortedRecoveredOutput +=
-          `
+            ` <div id=${three['countryInfo']['_id']} class="data-wrap" onclick="clickStore('${three['countryInfo']['iso2']}')">
                 <div class="data-wrap">
                     <div class="dataListContainer">
                         <div class="data"> 
                            <div class="dataRecovered">
-                               <h4>${i.country}</h4>
-                               <h5>Recovered: ${i.recovered}</h5>
+                               <h4>${three['country']}</h4>
+                               <h5>Recovered: ${three['recovered']}</h5>
                            </div>
                         </div>
                         <div class="dataNumber">
-                            ${index+1}                 
+                            <img src="${three['countryInfo']['flag']}" width="30px" height="20px"/>                 
                         </div>
                     </div>
                 </div>
+             </div>
                 
                 `
       })
@@ -217,22 +227,23 @@ function initMap() {
     document.getElementById('critical').addEventListener('click', function () {
       x.style.display = "block";
       button.style.display = "block";
-      inputData.sort((a, b) => b.critical - a.critical).forEach((i, index) => {
+      inputData.sort((a, b) => b.critical - a.critical).forEach((four, index) => {
         sortedCriticalOutput +=
-          `
+            ` <div id=${four['countryInfo']['_id']} class="data-wrap" onclick="clickStore('${four['countryInfo']['iso2']}')">
                 <div class="data-wrap">
                     <div class="dataListContainer">
                         <div class="data">
                            <div class="dataCritical">
-                               <h4>${i.country}</h4>
-                               <h5>Critical: ${i.critical}</h5>
+                               <h4>${four['country']}</h4>
+                               <h5>Critical: ${four['critical']}</h5>
                            </div>
                         </div>
                         <div class="dataNumber">                  
-                            ${index+1}                           
+                            <img src="${four['countryInfo']['flag']}" width="30px" height="20px"/>                           
                         </div>
                     </div>
                 </div>
+              </div>
                 
                 `
       })
